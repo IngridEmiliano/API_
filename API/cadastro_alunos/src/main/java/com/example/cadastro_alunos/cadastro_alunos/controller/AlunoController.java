@@ -1,6 +1,5 @@
 package com.example.cadastro_alunos.cadastro_alunos.controller;
 
-import com.example.cadastro_alunos.cadastro_alunos.model.Aluno;
 import com.example.cadastro_alunos.model.Aluno;
 import com.example.cadastro_alunos.service.AlunoService;
 
