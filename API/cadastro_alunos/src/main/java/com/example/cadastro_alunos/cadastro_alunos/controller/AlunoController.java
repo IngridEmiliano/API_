@@ -36,7 +36,7 @@ public class AlunoController {
                 .orElse(ResponseEntity.notFound().build()); // Se não encontrar, retorna 404
     }
 
-    // Endpoint para deletar um produto pelo ID
+ 
     @DeleteMapping("/{id_aluno}")
     public void deletar(@PathVariable Long id_aluno) {
         service.deletar(id_aluno);
