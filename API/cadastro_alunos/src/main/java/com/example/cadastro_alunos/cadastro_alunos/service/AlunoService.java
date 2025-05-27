@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.cadastro_alunos.model.Aluno;
-import com.example.cadastro_alunos.repository.AlunoRepository;
+import com.example.cadastro_alunos.cadastro_alunos.model.Aluno;
+import com.example.cadastro_alunos.cadastro_alunos.repository.AlunoRepository;
 
 @Service
 public class AlunoService {
@@ -16,20 +16,24 @@ public class AlunoService {
     private AlunoRepository repository;
 
     public List<Aluno> listar() {
-        return repository.findAll():
+        return repository.findAll();
     }
 
-    public Aluno salvar(Aluno aluno){
+    public Aluno salvar(Aluno aluno) {
         return repository.save(aluno);
-
     }
 
     public Optional<Aluno> buscarPorId(Long id) {
         return repository.findById(id);
-
     }
 
-    public void deletar(Long id) {
-repository.deleteById(id);
+    public boolean deletar(Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
+
