@@ -1,0 +1,13 @@
+com\example\controle_estoque\demo\service\ProdutoService.class
+com\example\controle_estoque\demo\repository\UsuarioRepository.class
+com\example\controle_estoque\demo\model\Produto.class
+com\example\controle_estoque\demo\repository\ProdutoRepository.class
+com\example\controle_estoque\demo\model\Saida.class
+com\example\controle_estoque\demo\controller\SaidaController.class
+com\example\controle_estoque\demo\repository\SaidaRepository.class
+com\example\controle_estoque\demo\service\SaidaService.class
+com\example\controle_estoque\demo\ControleEstoqueApplication.class
+com\example\controle_estoque\demo\model\Usuario.class
+com\example\controle_estoque\demo\service\UsuarioService.class
+com\example\controle_estoque\demo\controller\ProdutoController.class
+com\example\controle_estoque\demo\controller\UsuarioController.class
