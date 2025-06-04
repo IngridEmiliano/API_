@@ -1,6 +1,6 @@
 
         //API GET
-    fetch('http://localhost:8080/api/aluno', {
+    fetch('http://localhost:8080/api/alunos', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -48,7 +48,7 @@
         document.getElementById('email').value = "";
 
         //API POST  
-        fetch('http://localhost:8080/api/aluno', { 
+        fetch('http://localhost:8080/api/alunos', { 
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -79,23 +79,37 @@
     }
 
     //Remover Alguma Linha da tabela
-    function remover(dadosbotao){
+    function remover(id, dadosbotao){ //recebe dois parametros: id pra apagar da API, dadosbotao para saber qual linha remover
+     //icone de pergunta
       Swal.fire({
         icon: 'question',
         title: 'Você tem certeza?',
         showCancelButton: true,
         confirmButtonText: 'Sim',
         cancelButtonText: 'Não'
+        //resposta do ususario
       }).then((result) => {
         if (result.isConfirmed) {
-            const linharemover = dadosbotao.closest('tr');
-            linharemover.remove();
-          Swal.fire('Confirmado!', '', 'success');
+          //faz a requisiçao pra API (apagar)
+          fetch('http://localhost:8080/api/aluno/${id}', {//ajuste do caminho
+          method: 'DELETE'
+        })
+        //verifica se deu certo com o servidor
+             .then(response => {
+        if (response.ok) {
+          //remove a linha da tabela
+          const linharemover = dadosbotao.closest('tr'); //acha o elemento <tr> (linha) mais próximo do botão clicado.
+          linharemover.remove();//apaga a linha da tabela
+          //notficação de sucesso
+          Swal.fire('Removido!', '', 'success');
+          //caso de erro o retorno
         } else {
-          Swal.fire('Cancelado', '', 'info');
+          Swal.fire('Erro!', 'Não foi possível remover.', 'error');
         }
       });
-
-      //Editar Alguma Linha da tabela
-      
-      }
+      //Se a pessoa clicou em "Não", aparece uma mensagem: "Cancelado".
+    } else {
+      Swal.fire('Cancelado', '', 'info');
+    }
+  });
+}
