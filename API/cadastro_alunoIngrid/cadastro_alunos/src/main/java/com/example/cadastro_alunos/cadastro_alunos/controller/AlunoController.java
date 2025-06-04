@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*") //Permite que o front acesse a API
 @RestController
 @RequestMapping("/api/aluno")
 
