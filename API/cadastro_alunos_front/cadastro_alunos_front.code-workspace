@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../cadastro_alunos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cadastro_alunos_front"
+	}
+}
