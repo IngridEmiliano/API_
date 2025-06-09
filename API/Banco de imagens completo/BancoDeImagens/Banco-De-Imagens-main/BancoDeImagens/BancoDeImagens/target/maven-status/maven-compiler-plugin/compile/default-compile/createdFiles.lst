@@ -1,0 +1,5 @@
+com\example\BancoDeImagens\service\ImagemService.class
+com\example\BancoDeImagens\BancoDeImagensApplication.class
+com\example\BancoDeImagens\controller\ImagemController.class
+com\example\BancoDeImagens\model\ImagemModel.class
+com\example\BancoDeImagens\repository\ImagemRepository.class
